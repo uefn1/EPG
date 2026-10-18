@@ -1,0 +1,45 @@
+name: Update Tigo Sports Paraguay EPG Daily
+
+on:
+  schedule:
+    # 毎日 21:00 UTC = 日本時間 06:00 JST に実行 (Paraguayでは18:00)
+    - cron: '0 21 * * *'
+  workflow_dispatch:  # 手動実行も可能
+
+jobs:
+  update-epg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+      
+      - name: Generate EPG (JST)
+        run: |
+          python auto_epg_updater.py
+          ls -lh *.xml
+      
+      - name: Commit and push
+        run: |
+          git config --local user.email "epg-bot@example.com"
+          git config --local user.name "EPG Bot"
+          git add *.xml
+          git diff --staged --quiet || git commit -m "Auto update EPG $(date -u +%Y-%m-%d)"
+          git push
+
+      # GitHub Pagesに公開する場合
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+          # これで https://YOUR_USERNAME.github.io/YOUR_REPO/tigo_sports_paraguay_epg_JST.xml がEPG URLになる
