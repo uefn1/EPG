@@ -2,7 +2,7 @@ name: Update Tigo Sports Paraguay EPG Daily
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # 2時間毎
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,8 @@ jobs:
   update-epg:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout main
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -23,38 +24,25 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4 lxml
+        run: pip install requests beautifulsoup4 lxml
 
-      - name: Generate EPG (JST)
+      - name: Generate REAL EPG (JST) - APF Official
         run: |
-          if [ -f auto_epg_real.py ]; then
-            python auto_epg_real.py
-          elif [ -f auto_epg_updater.py ]; then
-            python auto_epg_updater.py
-          else
-            echo "No updater script found!"
-            exit 1
-          fi
+          python auto_epg_real.py
           ls -lh *.xml
+          echo "--- XML head ---"
+          head -n 20 tigo_sports_paraguay_REAL_JST.xml
 
-      - name: Commit and push
+      - name: Commit XML to main only (force add)
         run: |
           git config --local user.email "epg-bot@example.com"
           git config --local user.name "EPG Bot"
-          git add *.xml || true
+          git add -f tigo_sports_paraguay_REAL_JST.xml
+          git add -f *.xml
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "EPG update $(date -u +%Y-%m-%d_%H:%M) - every 2h"
-            git push
+            git commit -m "EPG update $(date -u +%Y-%m-%d_%H:%M) JST - APF Fecha 15"
+            git push origin main
           fi
-
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
           
