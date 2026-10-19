@@ -13,35 +13,59 @@ permissions:
 
 jobs:
   update-epg:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-python@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
-      - run: pip install requests beautifulsoup4 lxml
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml
 
-      - name: Generate EPG (APF Official) - Manual
+      - name: Find and run EPG script
         run: |
-          python auto_epg_real.py
+          ls -la
+          echo "--- searching for python scripts ---"
+          ls -la *.py || echo "No py files in root"
+          ls -la **/*.py || true
+          
+          if [ -f auto_epg_real.py ]; then
+            echo "Found auto_epg_real.py"
+            python auto_epg_real.py
+          elif [ -f auto_epg_real_v3_fixed.py ]; then
+            echo "Found auto_epg_real_v3_fixed.py"
+            python auto_epg_real_v3_fixed.py
+          elif [ -f tigo_real_github_pages/auto_epg_real.py ]; then
+            echo "Found tigo_real_github_pages/auto_epg_real.py"
+            python tigo_real_github_pages/auto_epg_real.py
+            cp tigo_sports_paraguay_REAL_JST.xml ./ || cp tigo_real_github_pages/*.xml ./ || true
+          else
+            echo "ERROR: No EPG script found!"
+            echo "Please ensure auto_epg_real.py is in repository root"
+            exit 2
+          fi
+          
+          echo "--- Generated XML ---"
           ls -lh *.xml
-          echo "---- preview ----"
-          head -n 40 tigo_sports_paraguay_REAL_JST.xml
+          head -n 40 tigo_sports_paraguay_REAL_JST.xml || head -n 40 *.xml
 
-      - name: Commit to main (no gh-pages, no .nojekyll)
+      - name: Commit to main
         run: |
           git config user.email "epg-bot@example.com"
           git config user.name "EPG Bot"
           git add -f tigo_sports_paraguay_REAL_JST.xml
-          git add -f *.xml
+          git add -f *.xml || true
           if git diff --staged --quiet; then
-            echo "No changes"
+            echo "No changes to commit"
           else
             git commit -m "Manual EPG update: ${{ inputs.reason }} $(date -u +%Y-%m-%d_%H:%M) JST"
-            git push origin main
+            git push origin HEAD:main
           fi
           
