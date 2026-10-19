@@ -1,8 +1,12 @@
 name: Update Tigo Sports Paraguay EPG - Manual Only
 
-# テスト用: 手動実行のみ (自動実行なし) - 1回だけ実行したい時に使用
 on:
   workflow_dispatch:
+    inputs:
+      reason:
+        description: '実行理由 (任意)'
+        required: false
+        default: 'manual test'
 
 permissions:
   contents: write
@@ -14,48 +18,30 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4 lxml
+      - run: pip install requests beautifulsoup4 lxml
 
-      - name: Generate REAL EPG (JST)
+      - name: Generate EPG (APF Official) - Manual
         run: |
-          if [ -f auto_epg_real.py ]; then
-            python auto_epg_real.py
-          elif [ -f auto_epg_updater.py ]; then
-            python auto_epg_updater.py
-          else
-            echo "No updater script found!"
-            ls -la
-            exit 1
-          fi
+          python auto_epg_real.py
           ls -lh *.xml
-          echo "--- XML preview ---"
-          head -n 30 tigo_sports_paraguay_REAL_JST.xml || head -n 30 *.xml
+          echo "---- preview ----"
+          head -n 40 tigo_sports_paraguay_REAL_JST.xml
 
-      - name: Commit and push
+      - name: Commit to main (no gh-pages, no .nojekyll)
         run: |
-          git config --local user.email "epg-bot@example.com"
-          git config --local user.name "EPG Bot"
-          git add *.xml || true
+          git config user.email "epg-bot@example.com"
+          git config user.name "EPG Bot"
+          git add -f tigo_sports_paraguay_REAL_JST.xml
+          git add -f *.xml
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "Manual EPG update $(date -u +%Y-%m-%d_%H:%M) - manual run"
-            git push
+            git commit -m "Manual EPG update: ${{ inputs.reason }} $(date -u +%Y-%m-%d_%H:%M) JST"
+            git push origin main
           fi
-
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
+          
