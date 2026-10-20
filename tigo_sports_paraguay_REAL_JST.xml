@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tv generator-info-name="tigo-real-v3.1-apf-official" generator-info-date="2026-10-20T16:57:39.399450+09:00" generator-info-last-update-jst="2026/10/20 16:57:39 JST" generator-info-last-update-py="2026/10/20 04:57:39 PYT" generator-info-source="APF oficial via latribuna.com.py - Fecha 15 confirmada">
+<tv generator-info-name="tigo-real-v3.1-apf-official" generator-info-date="2026-10-20T18:04:15.126557+09:00" generator-info-last-update-jst="2026/10/20 18:04:15 JST" generator-info-last-update-py="2026/10/20 06:04:15 PYT" generator-info-source="APF oficial via latribuna.com.py - Fecha 15 confirmada">
   <channel id="TigoSports.py">
     <display-name>Tigo Sports Paraguay</display-name>
     <icon src="https://www.tigosports.com.py/favicon.ico"/>
@@ -55,42 +55,42 @@
   </programme>
   <programme start="20261018050000 +0900" stop="20261018071500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Guaraní vs Nacional</title>
-    <desc lang="es">Fecha 15 - Tigo Sports canal 100 - En vivo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-17 17:00 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Fecha 15 - Tigo Sports canal 100 - En vivo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-17 17:00 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261018072000 +0900" stop="20261018093500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Olimpia vs 2 de Mayo</title>
-    <desc lang="es">Fecha 15 - Tigo Sports - En vivo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-17 19:20 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Fecha 15 - Tigo Sports - En vivo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-17 19:20 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261019050000 +0900" stop="20261019071500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Cerro Porteño vs Sportivo Ameliano</title>
-    <desc lang="es">Fecha 15 - La Nueva Olla - Tigo Sports - Confirmado - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-18 17:00 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Fecha 15 - La Nueva Olla - Tigo Sports - Confirmado - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-18 17:00 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261019072000 +0900" stop="20261019093500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Sportivo Trinidense vs Libertad</title>
-    <desc lang="es">Fecha 15 - Santísima Trinidad - Tigo Sports - Simultáneo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-18 19:20 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Fecha 15 - Santísima Trinidad - Tigo Sports - Simultáneo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-18 19:20 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261019072000 +0900" stop="20261019093500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Sportivo Luqueño vs San Lorenzo</title>
-    <desc lang="es">Fecha 15 - Luis Salinas Itauguá - Tigo Sports - Simultáneo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-18 19:20 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Fecha 15 - Luis Salinas Itauguá - Tigo Sports - Simultáneo - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-18 19:20 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261020050000 +0900" stop="20261020071500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Resumen Fecha 15 - Goles y Polémicas</title>
-    <desc lang="es">Tigo Sports Noticias Especial - Lo mejor de la fecha 15 - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-19 17:00 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Tigo Sports Noticias Especial - Lo mejor de la fecha 15 - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-19 17:00 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261020072000 +0900" stop="20261020093500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Laboratorio Fútbol - Análisis Fecha 15</title>
-    <desc lang="es">Análisis completo de la fecha 15 - Tigo Sports - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-19 19:20 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Análisis completo de la fecha 15 - Tigo Sports - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-19 19:20 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
   <programme start="20261021072000 +0900" stop="20261021093500 +0900" channel="TigoSports.py">
     <title lang="es">En Vivo: Previa Fecha 16 - APF</title>
-    <desc lang="es">Previa de la próxima fecha - Tigo Sports - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-20 19:20 PY - Actualizado 2026/10/20 16:57 JST</desc>
+    <desc lang="es">Previa de la próxima fecha - Tigo Sports - APF Clausura Fecha 15 - Tigo Sports - Original 2026-10-20 19:20 PY - Actualizado 2026/10/20 18:04 JST</desc>
     <category lang="es">Fútbol - En Vivo - APF Oficial</category>
   </programme>
 </tv>
