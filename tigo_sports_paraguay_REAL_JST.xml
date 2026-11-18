@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tv generator-info-name="tigo-real-v3.1-apf-official" generator-info-date="2026-11-18T09:24:44.801965+09:00" generator-info-last-update-jst="2026/11/18 09:24:44 JST" generator-info-last-update-py="2026/11/17 21:24:44 PYT" generator-info-source="APF oficial via latribuna.com.py - Fecha 15 confirmada">
+<tv generator-info-name="tigo-real-v3.1-apf-official" generator-info-date="2026-11-18T18:38:58.220011+09:00" generator-info-last-update-jst="2026/11/18 18:38:58 JST" generator-info-last-update-py="2026/11/18 06:38:58 PYT" generator-info-source="APF oficial via latribuna.com.py - Fecha 15 confirmada">
   <channel id="TigoSports.py">
     <display-name>Tigo Sports Paraguay</display-name>
     <icon src="https://www.tigosports.com.py/favicon.ico"/>
     <url>https://www.tigosports.com.py</url>
   </channel>
-  <programme start="20261117180000 +0900" stop="20261117220000 +0900" channel="TigoSports.py">
-    <title lang="es">Tigo Sports Noticias</title>
-    <desc lang="es">Noticias deportivas</desc>
-  </programme>
-  <programme start="20261117220000 +0900" stop="20261118000000 +0900" channel="TigoSports.py">
-    <title lang="es">Laboratorio Fútbol</title>
-    <desc lang="es">Análisis</desc>
-  </programme>
-  <programme start="20261118000000 +0900" stop="20261118020000 +0900" channel="TigoSports.py">
-    <title lang="es">El Extra Polideportivo</title>
-    <desc lang="es">Polideportivo</desc>
-  </programme>
-  <programme start="20261118020000 +0900" stop="20261118043000 +0900" channel="TigoSports.py">
-    <title lang="es">Fútbol Paraguayo - Repeticiones</title>
-    <desc lang="es">Mejores partidos</desc>
-  </programme>
   <programme start="20261118180000 +0900" stop="20261118220000 +0900" channel="TigoSports.py">
     <title lang="es">Tigo Sports Noticias</title>
     <desc lang="es">Noticias deportivas</desc>
@@ -50,6 +34,22 @@
     <desc lang="es">Polideportivo</desc>
   </programme>
   <programme start="20261120020000 +0900" stop="20261120043000 +0900" channel="TigoSports.py">
+    <title lang="es">Fútbol Paraguayo - Repeticiones</title>
+    <desc lang="es">Mejores partidos</desc>
+  </programme>
+  <programme start="20261120180000 +0900" stop="20261120220000 +0900" channel="TigoSports.py">
+    <title lang="es">Tigo Sports Noticias</title>
+    <desc lang="es">Noticias deportivas</desc>
+  </programme>
+  <programme start="20261120220000 +0900" stop="20261121000000 +0900" channel="TigoSports.py">
+    <title lang="es">Laboratorio Fútbol</title>
+    <desc lang="es">Análisis</desc>
+  </programme>
+  <programme start="20261121000000 +0900" stop="20261121020000 +0900" channel="TigoSports.py">
+    <title lang="es">El Extra Polideportivo</title>
+    <desc lang="es">Polideportivo</desc>
+  </programme>
+  <programme start="20261121020000 +0900" stop="20261121043000 +0900" channel="TigoSports.py">
     <title lang="es">Fútbol Paraguayo - Repeticiones</title>
     <desc lang="es">Mejores partidos</desc>
   </programme>
